@@ -10,8 +10,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/user-dashboard' element={<UserDashboard />} />
-        <Route path='/admin-dashboard' element={<AdminDashboard />} />
+        <Route path='/user/dashboard' element={<UserDashboard />} />
+        <Route path='/admin/dashboard' element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
   );
