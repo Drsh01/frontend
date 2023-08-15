@@ -32,8 +32,8 @@ function Login() {
         else setError(res.data);
     }
 
-    if (isAdmin === true) return <Navigate to='/admin-dashboard' />
-    else if (isAdmin === false) return <Navigate to='/user-dashboard' />
+    if (isAdmin === true) return <Navigate to='/admin/dashboard' />
+    else if (isAdmin === false) return <Navigate to='/user/dashboard' />
     return (
   
 
