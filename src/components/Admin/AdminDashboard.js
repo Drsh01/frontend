@@ -3,9 +3,8 @@ const AdminDashboard = () => {
   return (
     <div className="row">
       <div className="col-6 text-center" style={{ marginTop: "100px" }}>
-          <img src="https://logodix.com/logo/1707130.png"  alt="Admin logo" />
+          <img src="https://logodix.com/logo/1707130.png" alt="Admin logo" title="Admin Dashboard shows all the actions available to an admin" />
           <h1 className="mb-4" style={{ fontSize: "4rem" }}>Admin Dashboard</h1>
-          <p style={{ fontSize: "2.5rem", marginTop: "50px" }}>Admin Dashboard shows all the actions available to an admin</p>
       </div>
       <div className="row d-flex flex-column justify-center col-6 border-left" style={{ marginTop: "90px"}}>
         <div className="card col-8 text-center" style={{ marginLeft: "2rem" }}>
