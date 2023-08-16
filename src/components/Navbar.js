@@ -1,6 +1,6 @@
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg fixed-top bg-light navbar-light justify-start">
+        <nav className="navbar navbar-expand-lg fixed-top navbar-light justify-start" style={{ background: '#1e90ff' }}>
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <img
