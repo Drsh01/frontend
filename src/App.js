@@ -8,6 +8,7 @@ import ViewLoan from './components/User/ViewLoan';
 import ViewItems from './components/User/ViewItems';
 import ManageItems from './components/Admin/ManageItems';
 import ManageCustomers from './components/Admin/ManageCustomers';
+import AddCustomerComponent from './components/Admin/AddCustomerComponent';
 import ManageLoanCards from './components/Admin/ManageLoanCards';
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path='/user/view-items' element={ <ViewItems /> } />
         <Route path='/admin/items' element={ <ManageItems /> } />
         <Route path='/admin/customers' element={ <ManageCustomers /> } />
+        <Route path="/admin/add-customer" element = {<AddCustomerComponent />} ></Route>
+        <Route path="/admin/edit-customer" element = {<AddCustomerComponent/>} ></Route>
         <Route path='/admin/loan-card' element={ <ManageLoanCards /> } />
       </Routes>
     </BrowserRouter>
