@@ -20,12 +20,6 @@ const AddCustomerComponent = () => {
 
 
     const handleSubmit = (e)=>{
-        // e.preventDefault();
-        // if(password.length<8 || (isAdmin!== true && isAdmin!==false)){
-        //     setIsValid(false);
-        // }else{
-        //     saveOrUpdateEmployee(e);
-        // }
         saveOrUpdateEmployee(e);
     }
 
@@ -35,22 +29,16 @@ const AddCustomerComponent = () => {
         const employee = { employeeID, employeeName,employeeDesignation, employeeDepartment, employeeDOJ, employeeDOB, gender }
 
         if (id) {
+            setEmployeeID(id)
             CustomerService.updateEmployee(id, employee).then((response) => {
                 navigate('/admin/customers');
-
-                // history.push('/users')
             }).catch(error => {
                 console.log(error)
             })
-
         } else {
             CustomerService.createEmployee(employee).then((response) => {
-
                 console.log(response.data)
                 navigate('/admin/customers');
-
-                // history.push('/users');
-
             }).catch(error => {
                 console.log(error)
             })
@@ -61,10 +49,11 @@ const AddCustomerComponent = () => {
     useEffect(() => {
 
         CustomerService.getEmployeeById(id).then((response) => {
-            setEmployeeID(response.data.employeeId)
+          
+            setEmployeeID(response.data.id)
             setEmployeeName(response.data.employeeName)
             setEmployeeDesignation(response.data.employeeDesignation)
-            setEmployeeDepartment(response.data.employeeDepatment)
+            setEmployeeDepartment(response.data.employeeDepartment)
             setEmployeeDOJ(response.data.employeeDOJ)
             setEmployeeDOB(response.data.employeeDOB)
             setGender(response.data.gender)
@@ -166,26 +155,7 @@ const AddCustomerComponent = () => {
                                     </input>
                                 </div>
 
-
-                                {/* <div className="form-group mb-2">
-                                    <label className="form-label"> Are you an Admin :</label>
-
-                                    <select value={isAdmin}
-                                        className="form-control"
-                                        onChange={handleAdminChange}>
-                                        <option name="S" >Select an Option</option>
-                                        <option name="True">T</option>
-                                        <option name="False">F</option>
-                                    </select>
-                                </div>
-                                {!isValid && (
-                                    <div style={{color: 'red'}}>
-                                        Please make sure the password is min 8 characters in length and necessar fields are selected.
-                                    </div>
-                                )} */}
                                 <button className="btn btn-success"  onClick={handleSubmit} >Submit </button>
-
-                                {/* <button className="btn btn-success" disabled={!(password && isValid)} onClick={(e) => saveOrUpdateEmployee(e)} >Submit </button> */}
                                 <Link to="/admin/customers" className="btn btn-danger"
                                     style={{ marginLeft: "10px" }}> Cancel </Link>
                             </form>

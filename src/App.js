@@ -25,7 +25,7 @@ function App() {
         <Route path='/admin/items' element={ <ManageItems /> } />
         <Route path='/admin/customers' element={ <ManageCustomers /> } />
         <Route path="/admin/add-customer" element = {<AddCustomerComponent />} ></Route>
-        <Route path="/admin/edit-customer" element = {<AddCustomerComponent/>} ></Route>
+        <Route path="/admin/edit-customer/:id" element = {<AddCustomerComponent/>} ></Route>
         <Route path='/admin/loan-card' element={ <ManageLoanCards /> } />
       </Routes>
     </BrowserRouter>

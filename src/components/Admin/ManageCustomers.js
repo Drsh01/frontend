@@ -3,45 +3,6 @@ import { Link } from 'react-router-dom'
 import './ManageCustomer.css'
 import CustomerService from '../AdminServices/CustomerService'
 
-// const employees = [
-//     {
-//         "Employee_Id": "E00001",
-//         "Name": "Ram",
-//         "Designation": "Manager",
-//         "Department": "Finance",
-//         "Gender": "Male",
-//         "Date_of_Birth": new Date("1973-01-01").toDateString(),
-//         "Date_of_Joining": new Date("2000-01-01").toDateString()
-//     },
-//     {
-//         "Employee_Id": "E00002",
-//         "Name": "Manoj",
-//         "Designation": "Engineer",
-//         "Department": "Human Resource",
-//         "Gender": "Male",
-//         "Date_of_Birth": new Date("1988-02-01").toDateString(),
-//         "Date_of_Joining": new Date("2007-10-01").toDateString()
-//     },
-//     {
-//         "Employee_Id": "E00005",
-//         "Name": "Riya",
-//         "Designation": "Manager",
-//         "Department": "Finance",
-//         "Gender": "Female",
-//         "Date_of_Birth": new Date("1999-11-11").toDateString(),
-//         "Date_of_Joining": new Date("2010-10-04").toDateString()
-//     },
-//     {
-//         "Employee_Id": "E00023",
-//         "Name": "Abhishek",
-//         "Designation": "Lead engineer",
-//         "Department": "Technology",
-//         "Gender": "Male",
-//         "Date_of_Birth": new Date("1972-10-06").toDateString(),
-//         "Date_of_Joining": new Date("2000-01-01").toDateString()
-//     }
-// ]
-
 
 export default function ManageCustomers() {
 
@@ -95,11 +56,9 @@ export default function ManageCustomers() {
                                 Object.keys(employee).map((key) => <td>{employee[key]}</td>)
                             }
                             <td>
-                                {/* <i class="material-icons">&#xE254;</i>
-                                <i class="material-icons">&#xE872;</i> */}
-                                <Link className="inlineLink" to={`/admin/edit-customer/${employee.employeeID}`} ><i class="material-icons">&#xE254;</i></Link>
+                                <Link className="inlineLink" to={`/admin/edit-customer/${employee.employeeID}`} ><i className="material-icons">&#xE254;</i></Link>
                                 <button className="inlineButton" onClick={() => deleteEmployee(employee.employeeID)}
-                                ><i class="material-icons">&#xE872;</i> </button>
+                                ><i className="material-icons">&#xE872;</i> </button>
                             </td>
 
                         </tr>
@@ -107,10 +66,10 @@ export default function ManageCustomers() {
                     </tbody>
                 </table>
             </div>
-            <div class="col-sm-4">
+            <div className="col-sm-4">
                 <Link to="/admin/add-customer" className="btn" >
-                    <button type="button" class="btn btn-info add-new">
-                        <i class="fa fa-plus"></i> Add New</button>
+                    <button type="button" className="btn btn-info add-new">
+                        <i className="fa fa-plus"></i> Add New</button>
                 </Link>
             </div>
         </div>
