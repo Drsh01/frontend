@@ -9,6 +9,11 @@ import ViewItems from './components/User/ViewItems';
 import ManageItems from './components/Admin/ManageItems';
 import ManageCustomers from './components/Admin/ManageCustomers';
 import ManageLoanCards from './components/Admin/ManageLoanCards';
+import AddLoanCard from './components/Admin/AddLoanCard'
+import UpdateLoanCard from './components/Admin/UpdateLoanCard';
+
+
+
 
 function App() {
   return (
@@ -24,6 +29,9 @@ function App() {
         <Route path='/admin/items' element={ <ManageItems /> } />
         <Route path='/admin/customers' element={ <ManageCustomers /> } />
         <Route path='/admin/loan-card' element={ <ManageLoanCards /> } />
+        <Route path='/admin/loan-card/add' element={ <AddLoanCard /> } />
+        <Route path='/admin/loan-card/update/:id' element={ <UpdateLoanCard /> } />
+        
       </Routes>
     </BrowserRouter>
   );
