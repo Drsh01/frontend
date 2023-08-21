@@ -48,6 +48,9 @@ const AddLoanCardComponent = () => {
         if (!id) {
             return;
         }
+        if(loanType!==""){
+            return;
+        }
         // console.log("useEffect is being called");
         LoanCardService.getLoanCardById(id).then((response) => {
 
@@ -63,7 +66,10 @@ const AddLoanCardComponent = () => {
     const title = () => {
 
         if (id) {
-            return <h2 className="text-center">Update Loan Card</h2>
+            return <div>
+                <h2 className="text-center">Update Loan Card</h2>
+                <h4>Loan Id : {id}</h4>
+                </div>
         } else {
             return <h2 className="text-center">Add Loan Card</h2>
         }
@@ -76,7 +82,7 @@ const AddLoanCardComponent = () => {
                 <div className="form-container" style={{ fontSize: "20px" }}>
                 <div className="title-header">{title()}</div>
                     <form>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label htmlFor="loanType">Loan Id</label>
                             <input
                                 type="text"
@@ -86,7 +92,7 @@ const AddLoanCardComponent = () => {
                                 value={loanId}
                                 onChange={(e) => setLoanId(e.target.value)}
                             />
-                        </div>
+                        </div> */}
                         <div className="form-group">
                             <label htmlFor="loanType">Loan Type</label>
                             <input

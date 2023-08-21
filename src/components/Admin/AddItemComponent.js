@@ -56,6 +56,9 @@ const AddItemComponent = () => {
         if (!id) {
             return;
         }
+        if(itemDescription!==""){
+            return;
+        }
         // console.log("useEffect is being called");
         ItemService.getItemById(id).then((response) => {
 
@@ -94,7 +97,10 @@ const AddItemComponent = () => {
     const title = () => {
 
         if (id) {
-            return <h2 className="text-center">Update Item</h2>
+            return <div>
+            <h2 className="text-center">Update Item</h2>
+            <h4>Item Id : {id}</h4>
+            </div>
         } else {
             return <h2 className="text-center">Add Item</h2>
         }

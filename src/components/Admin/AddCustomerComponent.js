@@ -52,6 +52,9 @@ const AddCustomerComponent = () => {
         if(!id){
             return;
         }
+        if(employeeName!==""){
+            return;
+        }
         // console.log("useEffect is being called");
         CustomerService.getEmployeeById(id).then((response) => {
 
@@ -70,7 +73,10 @@ const AddCustomerComponent = () => {
     const title = () => {
 
         if (id) {
-            return <h4 className="text-center">Update Employee</h4>
+            return <div>
+            <h2 className="text-center">Update Employee</h2>
+            <h4>Employee Id : {id}</h4>
+            </div>
         } else {
             return <h4 className="text-center">Add Employee</h4>
         }
@@ -91,7 +97,9 @@ const AddCustomerComponent = () => {
                                 name="name"
                                 className="form-control"
                                 value={employeeName}
-                                onChange={(e) => setEmployeeName(e.target.value)}
+                                onChange={(e) => {
+                                    console.log(e.target.value);
+                                    setEmployeeName(e.target.value)}}
                             />
                         </div>
                         <div className="form-group">
