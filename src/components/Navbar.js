@@ -1,18 +1,22 @@
+import '../Styles/Navbar.css'
+
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg fixed-top navbar-light justify-start" style={{ background: '#1e90ff' }}>
+        <nav className="navbar navbar-expand-lg fixed-top justify-start" style={{ background: '#004691' }}>
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <img
                         id="LMA-logo"
-                        src="https://nicholasfinancial.com/wp-content/uploads/2017/10/Cons_Loan_Icon_01.png"
+                        src="https://i.pinimg.com/736x/3f/c0/52/3fc052dd7dddc69831b16f6de8e3b19a.jpg"
                         alt="LMA Logo"
                         draggable="false"
-                        height="50"
+                        height="60"
+                        style={{borderRadius: "25%", border: "2px solid #ccc"}}
                     />
                 </a>
-                <h2>LOAN MANAGEMENT APPLICATION</h2>
-                <button style={{ opacity: 0 }}>qa4g</button>
+                <h2 className="page-heading">LOAN MANAGEMENT APPLICATION</h2>
+                <button class="btn my-2 my-sm-0" type="submit">Sign In</button>
+                {/* <button style={{ opacity: 0 }}>qa4g</button> */}
             </div>
         </nav>
     )

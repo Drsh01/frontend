@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=YourCustomFont&display=swap');
+
+.btn {
+    background: transparent;
+    color: white;
+    width: 120px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 8px;
+    border-width: 3px;
+    border-color: white;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+
+.page-heading {
+    font-family: 'YourCustomFont', sans-serif;
+    font-size: 33px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /* Remove underline */
+    border-bottom: 2px solid #ccc;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.page-heading::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 4px;
+    background-color: #333;
+    /* Border color */
+}

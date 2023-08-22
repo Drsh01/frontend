@@ -24,10 +24,10 @@ export default function ApplyLoan() {
     }
 
     return (
-        <div className="container text-center" style={{ marginTop: "120px" }}>
+        <div className="container text-center" style={{ marginTop: "150px", backgroundColor: "#0000ff" }}>
             <h2>Select Product and Apply for Loan</h2>
             <form className="border col-xs-12 col-sm-10 col-8 mx-auto">
-                <div className="row">
+                <div className="row" style={{backgroundColor: "black" }}>
                     <div className="form-outline form-inline my-4 col-6">
                         <label className="form-label col-6">Employee Id</label>
                         <input className="form-control col-6" type="number" disabled value={1} />
@@ -39,7 +39,7 @@ export default function ApplyLoan() {
                         </select>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row" style={{backgroundColor: "black" }}>
                     <div className="form-outline form-inline mb-4 col-6">
                         <label className="form-label col-6">Item Description</label>
                         <input className="form-control col-6" type="text" onChange={(e) => setItemDescription(e.target.value)} />
@@ -49,13 +49,14 @@ export default function ApplyLoan() {
                         <input className="form-control col-6" type="text" onChange={(e) => setItemValue(e.target.value)} />
                     </div>
                 </div>
+                <div className="row" style={{backgroundColor: "black" }}>
                 <div className="form-outline form-inline mb-4 col-6">
                     <label className="form-label col-6">Item Make</label>
                     <select className="select col-xs-8 col-sm-6 col-4" onChange={(e) => setItemMakeValue(e.target.value)} >
                         {itemMake.map((make, index) => <option key={index} value={make}>{make}</option>)}
                     </select>
                 </div>
-
+                </div>
                 <button type="button" className="btn btn-success btn-block col-3 mb-4" onClick={handleSubmit}>Apply Loan</button>
             </form>
         </div>

@@ -55,26 +55,29 @@ const EmployeeDetails = {
 export default function ViewItems() {
 
     return (
-        <div className="container" style={{ marginTop: "120px" }}>
-            <div className="row" style={{ marginBottom: "30px" }}>
-                <h2 style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)' }}>Employee Information</h2>
-                <hr />
-                <div className="col-6">
-                    {
-                        Object.keys(EmployeeDetails).map((key, index) => {
-                            if (index <= Object.keys(EmployeeDetails).length / 2) return <p><span style={{ fontFamily: 'Poppins' }}>{key}:</span> {EmployeeDetails[key]}</p>
-                            else return null;
-                        })
-                    }
+        <>
+            <div className="container" style={{ marginTop: "150px" }}>
+                <div className="row" style={{ marginBottom: "30px", backgroundColor: "white" }}>
+                    <h2 style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)' }}>Employee Information</h2>
+                    <hr />
+                    <div className="col-6">
+                        {
+                            Object.keys(EmployeeDetails).map((key, index) => {
+                                if (index <= Object.keys(EmployeeDetails).length / 2) return <p><span style={{ fontFamily: 'Poppins' }}>{key}:</span> {EmployeeDetails[key]}</p>
+                                else return null;
+                            })
+                        }
+                    </div>
+                    <div className="col-6">
+                        {
+                            Object.keys(EmployeeDetails).map((key, index) => {
+                                if (index > Object.keys(EmployeeDetails).length / 2) return <p><span style={{ fontFamily: 'Poppins' }}>{key}:</span> {EmployeeDetails[key]}</p>
+                                else return null;
+                            })
+                        }
+                    </div>
                 </div>
-                <div className="col-6">
-                    {
-                        Object.keys(EmployeeDetails).map((key, index) => {
-                            if (index > Object.keys(EmployeeDetails).length / 2) return <p><span style={{ fontFamily: 'Poppins' }}>{key}:</span> {EmployeeDetails[key]}</p>
-                            else return null;
-                        })
-                    }
-                </div>
+
             </div>
             <div className="row">
                 <h2 style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)' }}>Items Purchased</h2>
@@ -95,8 +98,7 @@ export default function ViewItems() {
                     </div>
                 )}
                 </div>
-                
             </div>
-        </div>
+        </>
     );
 }
