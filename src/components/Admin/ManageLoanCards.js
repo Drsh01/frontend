@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
 import './ManageCustomer.css'
 import LoanCardService from '../AdminServices/LoanCardService'
 
@@ -23,6 +24,7 @@ export default function ManageLoanCards() {
         LoanCardService.deleteLoanCard(loanCard_id).then((response) => {
             getAllLoanCards();
             alert("Are you sure you, loan card would be deleated")
+
         }).catch(error => {
             console.log(error);
         })
