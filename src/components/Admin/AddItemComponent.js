@@ -15,7 +15,7 @@ const AddItemComponent = () => {
     const [itemCategory, setItemCategory] = useState('Furniture')
     const [itemMake, setItemMake] = useState('Wooden')
     const [itemValuation, setItemValuation] = useState('')
-    const [issueStatus, setIssueStatus] = useState('No')
+    const [issueStatus, setIssueStatus] = useState('N')
 
     const [loanCards, setLoanCards] = useState([])
 
@@ -72,7 +72,7 @@ const AddItemComponent = () => {
             console.log(error)
         })
 
-    },)
+    },[])
 
 
     const getAllLoanCards = () => {
@@ -155,8 +155,8 @@ const AddItemComponent = () => {
                                 value={issueStatus}
                                 placeholder="Pleae choose your issue status here.."
                                 onChange={(e) => setIssueStatus(e.target.value)}>
-                                <option value="No">No</option>
-                                <option value="Yes">Yes</option>
+                                <option value="N">N</option>
+                                <option value="Y">Y</option>
                             </select>
                         </div>
 

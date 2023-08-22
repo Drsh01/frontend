@@ -57,8 +57,8 @@ export default function ManageCustomers() {
                                     Object.keys(employee).map((key) => <td>{employee[key]}</td>)
                                 }
                                 <td>
-                                    <Link className="inlineLink" to={`/admin/edit-customer/${employee.employeeID}`} ><i className="material-icons">&#xE254;</i></Link>
-                                    <button className="inlineButton" onClick={() => deleteEmployee(employee.employeeID)}
+                                    <Link className="inlineLink" to={`/admin/edit-customer/${employee.employeeId}`} ><i className="material-icons">&#xE254;</i></Link>
+                                    <button className="inlineButton" onClick={() => deleteEmployee(employee.employeeId)}
                                     ><i className="material-icons">&#xE872;</i> </button>
                                 </td>
 
