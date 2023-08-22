@@ -1,34 +1,60 @@
+import '../../Styles/AdminDashboard.css'
+import { Link } from 'react-router-dom'
 
 const AdminDashboard = () => {
   return (
-    <div className="row">
-      <div className="col-6 text-center" style={{ marginTop: "100px" }}>
-          <img src="https://logodix.com/logo/1707130.png" alt="Admin logo" title="Admin Dashboard shows all the actions available to an admin" />
-          <h1 className="mb-4" style={{ fontSize: "4rem" }}>Admin Dashboard</h1>
-      </div>
-      <div className="row d-flex flex-column justify-center col-6 border-left" style={{ marginTop: "90px"}}>
-        <div className="card col-8 text-center" style={{ marginLeft: "2rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Customer Data Management</h3>
-            <p className="card-text">This feature helps admin manage customers data.</p>
-            <a href="/admin/customers" className="btn btn-primary mb-4 col-6">Details</a>
+    <div className="page-content">
+      <div className="container mt-4">
+        <div className="row justify-content-center">
+          <div className="col-md-4 mb-6">
+            <div className="card card-highlight text-center d-flex flex-column justify-content-center align-items-center">
+              <img
+                src="https://managementweekly.org/wp-content/uploads/2021/04/header.jpg"
+                className="card-img-top rounded-6"
+                alt="Banking"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Customer Data Management</h5>
+                <p className="card-text">
+                  Registered Users and their details.
+                </p>
+                <Link to="/admin/customers"><button className="btn btn-custom">Details</button></Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-6">
+            <div className="card card-highlight text-center d-flex flex-column justify-content-center align-items-center">
+              <img
+                src="https://img.freepik.com/premium-vector/loan-credit-bank-management-money-credit-card-concept_385073-182.jpg?w=2000"
+                className="card-img-top rounded-6"
+                alt="Banking"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Loan Card Management</h5>
+                <p className="card-text">
+                  Manage user loan cards.
+                </p>
+                <Link to="/admin/loan-card"><button className="btn btn-custom">Details</button></Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-6">
+            <div className="card card-highlight text-center d-flex flex-column justify-content-center align-items-center">
+              <img
+                src="https://media.istockphoto.com/id/1288081906/vector/happy-female-entrepreneur-surrounded-money.jpg?s=612x612&w=0&k=20&c=FNGZi_Cp8_2i1_q-gCtlFvpFHJhA7LwNCMopo3xYM1U="
+                className="card-img-top rounded-6"
+                alt="Banking"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Items Master Data</h5>
+                <p className="card-text">
+                  Manage user item details.
+                </p>
+                <Link to="/admin/items"><button className="btn btn-custom">Details</button></Link>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="card col-8 text-center" style={{ marginLeft: "2rem", marginTop: "1.5rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Loan Card Management</h3>
-            <p className="card-text">This feature helps admin manage loan card of the users.</p>
-            <a href='/admin/loan-card' className="btn btn-primary mb-4 col-6">Details</a>
-          </div>
-        </div>
-        <div className="card col-8 text-center" style={{ marginLeft: "2rem", marginTop: "1.5rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Items Master Data</h3>
-            <p className="card-text">This feature helps admin manage product details.</p>
-             <a href="/admin/items" className="btn btn-primary mb-4 col-6">Details</a>
-          </div>
-        </div>
-
       </div>
     </div>
   );

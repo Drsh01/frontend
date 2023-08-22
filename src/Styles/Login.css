@@ -1,0 +1,35 @@
+.col-md-6 {
+    padding: 60px;
+    padding-bottom: 40px;
+}
+
+/* .row {
+     background-color: #004691; 
+} */
+
+.card {
+    /* background-color: #004691; */
+    border-radius: 50%;
+}
+
+.page-content {
+    position: absolute;
+    top: 60px;
+    /* Height of your navbar */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: #ffc107; */
+    /* Set your desired background color */
+    overflow: auto;
+    /* Enable scrolling if content overflows */
+}
+
+.form-label {
+    color: white;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: bold;
+}

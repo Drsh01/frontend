@@ -8,6 +8,9 @@ import ViewLoan from './components/User/ViewLoan';
 import ViewItems from './components/User/ViewItems';
 import ManageItems from './components/Admin/ManageItems';
 import ManageCustomers from './components/Admin/ManageCustomers';
+import AddCustomerComponent from './components/Admin/AddCustomerComponent';
+import AddLoanCardComponent from './components/Admin/AddLoanCardComponent';
+import AddItemComponent from './components/Admin/AddItemComponent';
 import ManageLoanCards from './components/Admin/ManageLoanCards';
 import AddLoanCard from './components/Admin/AddLoanCard'
 import UpdateLoanCard from './components/Admin/UpdateLoanCard';
@@ -28,6 +31,12 @@ function App() {
         <Route path='/user/view-items' element={ <ViewItems /> } />
         <Route path='/admin/items' element={ <ManageItems /> } />
         <Route path='/admin/customers' element={ <ManageCustomers /> } />
+        <Route path="/admin/add-customer" element = {<AddCustomerComponent />} ></Route>
+        <Route path="/admin/edit-customer/:id" element = {<AddCustomerComponent/>} ></Route>
+        <Route path="/admin/add-loanCard" element = {<AddLoanCardComponent />} ></Route>
+        <Route path="/admin/edit-loanCard/:id" element = {<AddLoanCardComponent/>} ></Route>
+        <Route path="/admin/add-item" element = {<AddItemComponent />} ></Route>
+        <Route path="/admin/edit-item/:id" element = {<AddItemComponent/>} ></Route>
         <Route path='/admin/loan-card' element={ <ManageLoanCards /> } />
         <Route path='/admin/loan-card/add' element={ <AddLoanCard /> } />
         <Route path='/admin/loan-card/update/:id' element={ <UpdateLoanCard /> } />

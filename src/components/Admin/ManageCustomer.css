@@ -1,0 +1,40 @@
+.add-new {
+    float: right;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: none;
+    min-width: 150px;
+    border-radius: 50px;
+    line-height: 13px;
+}
+.add-new i {
+    margin-right: 4px;
+    color: black;
+    margin-top: 100px;
+
+}
+.row{
+    width: 100%;
+}
+
+.btn-info{
+    margin-left: 10px;
+    color: white;
+    background-color: #004691;
+    /* width: 500px; */
+}
+
+.btn-info:hover{
+    background-color: black;
+    color:white;
+    transition: background-color 0.1 ease-in-out;
+}
+
+.inlineButton{
+    border: none;
+    background-color:transparent;
+    margin-right: 5px;
+    margin-left: 10px;
+
+}
