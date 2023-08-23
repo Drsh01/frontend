@@ -41,17 +41,23 @@ export default function ManageItems() {
                                 <th scope="col">Item Id</th>
                                 <th scope="col">Item Category</th>
                                 <th scope="col">Item Description</th>
-                                <th scope="col">Item value</th>
                                 <th scope="col">Issue Status</th>
                                 <th scope="col">Item Make</th>
+                                <th scope="col">Item value</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {items.map(item => <tr className="text-center">
-                                {
+                                <td>{item["itemId"]}</td>
+                                <td>{item["itemCategory"]}</td>
+                                <td>{item["itemDescription"]}</td>
+                                <td>{item["issueStatus"]}</td>
+                                <td>{item["itemMake"]}</td>
+                                <td>{item["itemValuation"]}</td>
+                                {/* {
                                     Object.keys(item).map((key) => <td>{item[key]}</td>)
-                                }
+                                } */}
                                 <td>
                                     <Link className="inlineLink" to={`/admin/edit-item/${item.itemId}`} ><i className="material-icons">&#xE254;</i></Link>
                                     <button className="inlineButton" onClick={() => deleteItem(item.itemId)}
