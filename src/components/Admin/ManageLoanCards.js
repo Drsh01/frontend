@@ -68,7 +68,7 @@ export default function ManageLoanCards() {
             <div className="container">
                 <div className="row" style={{ backgroundColor: "white" }}>
                     <div className="col-sm-4">
-                        <Link to="/admin/add-loanCard" className="btn" >
+                        <Link to="/admin/loan-card/add" className="btn" >
                             <button type="button" className="btn btn-info add-new">
                                 <i className="fa fa-plus"></i> Add New</button>
                         </Link>
