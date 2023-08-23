@@ -1,8 +1,10 @@
 import '../../Styles/AdminDashboard.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const AdminDashboard = () => {
-  return (
+  const navigate = useNavigate();
+
+  return localStorage.getItem('token') ? (
     <div className="page-content">
       <div className="container mt-4">
         <div className="row justify-content-center">
@@ -57,7 +59,7 @@ const AdminDashboard = () => {
         </div>
       </div>
     </div>
-  );
+  ) : navigate('/');
 }
 
 export default AdminDashboard;

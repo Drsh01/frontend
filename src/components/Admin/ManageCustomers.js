@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './ManageCustomer.css'
 import CustomerService from '../AdminServices/CustomerService'
 
 
 export default function ManageCustomers() {
 
+    const navigate = useNavigate();
 
     const [employees, setEmployees] = useState([])
 
@@ -32,7 +33,7 @@ export default function ManageCustomers() {
 
     }
 
-    return (
+    return localStorage.getItem('token') ? (
         <>
             <div className="container" style={{ marginTop: "150px" }}>
                 <div className="row" style={{ backgroundColor: "white" }}>
@@ -81,5 +82,5 @@ export default function ManageCustomers() {
                 </div>
             </div>
         </>
-    );
+    ) : navigate('/');
 }

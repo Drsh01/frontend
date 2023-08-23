@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const itemCategories = [
     "Furniture",
@@ -14,6 +15,7 @@ const itemMake = [
 
 export default function ApplyLoan() {
 
+    const navigate = useNavigate();
     const [itemDescription, setItemDescription] = React.useState('');
     const [itemMakeValue, setItemMakeValue] = React.useState(itemMake[0]);
     const [itemCategory, setItemCategory] = React.useState(itemCategories[0]);
@@ -23,7 +25,7 @@ export default function ApplyLoan() {
         console.log(itemDescription, itemMakeValue, itemCategory, itemValue);
     }
 
-    return (
+    return localStorage.getItem('token') ? (
         <div className="container text-center" style={{ marginTop: "150px", backgroundColor: "#0000ff" }}>
             <h2>Select Product and Apply for Loan</h2>
             <form className="border col-xs-12 col-sm-10 col-8 mx-auto">
@@ -60,5 +62,5 @@ export default function ApplyLoan() {
                 <button type="button" className="btn btn-success btn-block col-3 mb-4" onClick={handleSubmit}>Apply Loan</button>
             </form>
         </div>
-    );
+    ) : navigate('/');
 }

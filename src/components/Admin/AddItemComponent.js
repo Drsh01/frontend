@@ -106,7 +106,7 @@ const AddItemComponent = () => {
         }
     }
 
-    return (
+    return localStorage.getItem('token') ? (
 
         <div className="page-content">
             <div className="container">
@@ -181,7 +181,7 @@ const AddItemComponent = () => {
                 </div>
             </div>
         </div>
-    )
+    ) : navigate('/');
 }
 
 export default AddItemComponent

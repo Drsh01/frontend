@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 const items = [
     {
         "id": 1,
@@ -41,7 +43,8 @@ const EmployeeDetails = {
 
 export default function ViewItems() {
 
-    return (
+    const navigate = useNavigate();
+    return localStorage.getItem('token') ? (
         <>
             <div className="container" style={{ marginTop: "150px" }}>
                 <div className="row" style={{ marginBottom: "30px", backgroundColor: "white" }}>
@@ -96,5 +99,5 @@ export default function ViewItems() {
                 </div>
             </div>
         </>
-    );
+    ) : navigate('/');
 }

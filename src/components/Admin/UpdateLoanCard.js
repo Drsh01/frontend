@@ -63,7 +63,7 @@ export default function UpdateLoanCard() {
 
 
 
-    return (
+    return localStorage.getItem('token') ? (
         <div className="container text-center" style={{ marginTop: "120px" }}>
             <h2>Update Loan Card</h2>
             <form className="border col-xs-12 col-sm-10 col-8 mx-auto">
@@ -93,5 +93,5 @@ export default function UpdateLoanCard() {
                                     style={{ marginLeft: "10px" }}> Cancel </Link>
             </form>
         </div>
-    );    
+    ) : navigate('/');  
 }
