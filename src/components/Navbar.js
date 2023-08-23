@@ -1,6 +1,16 @@
+import { useNavigate } from 'react-router';
 import '../Styles/Navbar.css'
 
 export default function Navbar() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('#');
+        if(localStorage.getItem('token')) {
+            localStorage.clear();
+        }
+    }
+
     return (
         <nav className="navbar navbar-expand-lg fixed-top justify-start" style={{ background: '#004691' }}>
             <div className="container">
@@ -15,7 +25,7 @@ export default function Navbar() {
                     />
                 </a>
                 <h2 className="page-heading">LOAN MANAGEMENT APPLICATION</h2>
-                <button class="btn my-2 my-sm-0" type="submit">Sign In</button>
+                <button class="btn my-2 my-sm-0" onClick={handleClick} type="submit">{localStorage.getItem('token') ? 'Sign Out' : 'Sign In'}</button>
                 {/* <button style={{ opacity: 0 }}>qa4g</button> */}
             </div>
         </nav>
