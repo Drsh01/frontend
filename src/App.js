@@ -12,6 +12,11 @@ import AddCustomerComponent from './components/Admin/AddCustomerComponent';
 import AddLoanCardComponent from './components/Admin/AddLoanCardComponent';
 import AddItemComponent from './components/Admin/AddItemComponent';
 import ManageLoanCards from './components/Admin/ManageLoanCards';
+import AddLoanCard from './components/Admin/AddLoanCard'
+import UpdateLoanCard from './components/Admin/UpdateLoanCard';
+
+
+
 
 function App() {
   return (
@@ -33,6 +38,9 @@ function App() {
         <Route path="/admin/add-item" element = {<AddItemComponent />} ></Route>
         <Route path="/admin/edit-item/:id" element = {<AddItemComponent/>} ></Route>
         <Route path='/admin/loan-card' element={ <ManageLoanCards /> } />
+        <Route path='/admin/loan-card/add' element={ <AddLoanCard /> } />
+        <Route path='/admin/loan-card/update/:id' element={ <UpdateLoanCard /> } />
+        
       </Routes>
     </BrowserRouter>
   );
