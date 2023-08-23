@@ -8,13 +8,10 @@ export const AdminRoute = () => {
 
     useEffect(() => {
         if(!token) navigate('/');
+        if(role && !role.includes('ROLE_ADMIN')) navigate(-1);
     }, [token]);
 
     if(role && role.includes('ROLE_ADMIN')) {
         return <Outlet />;
-    }
-    else {
-        alert("Not allowed to view this page");
-        navigate(-1);
     }
 }
