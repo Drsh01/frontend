@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './ManageCustomer.css'
 import ItemService from '../AdminServices/ItemService'
 
 export default function ManageItems() {
-    const navigate = useNavigate();
     const [items, setItems] = useState([])
 
     useEffect(() => {
@@ -29,7 +28,7 @@ export default function ManageItems() {
         })
 
     }
-    return localStorage.getItem('token') ? (
+    return (
         <>
             <div className="container" style={{ marginTop: "150px" }}>
                 <div className="row" style={{ backgroundColor: "white" }}>
@@ -83,5 +82,5 @@ export default function ManageItems() {
                 </div>
             </div>
         </>
-    ) : navigate('/');
+    )
 }

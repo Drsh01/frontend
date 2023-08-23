@@ -15,7 +15,7 @@
     background-color: #004691;
     color: white;
     margin-top: 35%;
-    border-radius: 0%;
+    border-radius: 0% !important;
     height: 27rem;
   }
   

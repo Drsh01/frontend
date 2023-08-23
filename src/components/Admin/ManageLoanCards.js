@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './ManageCustomer.css'
 import LoanCardService from '../AdminServices/LoanCardService'
 
 export default function ManageLoanCards() {
-    const navigate = useNavigate();
     const [loanCards, setLoanCards] = useState([])
 
     useEffect(() => {
@@ -31,7 +30,7 @@ export default function ManageLoanCards() {
         })
 
     }
-    return localStorage.getItem('token') ? (
+    return (
         <>
             <div className="container" style={{ marginTop: "150px" }}>
                 <div className="row" style={{ backgroundColor: "white" }}>
@@ -76,5 +75,5 @@ export default function ManageLoanCards() {
                 </div>
             </div>
         </>
-    ) : navigate('/');
+    )
 }

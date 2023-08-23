@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import authService from '../services/auth.service';
+import { login } from '../services/auth.service';
 import '../Styles/Login.css'
-
-const URL = 'http://localhost:8000';
+import { useAuth } from './AuthProvider';
+import { useEffect } from 'react';
 
 function Login() {
     const [userId, setUserId] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
-    const [userData, setUserData] = useState();
 
+    const { token, role, setToken, setRole } = useAuth();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if(token) {
+            if(role.includes("ROLE_ADMIN")) navigate("/admin/dashboard");
+            else navigate("/user/dashboard");
+        }
+    })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,14 +28,17 @@ function Login() {
         }
         setError(undefined);
         try {
-            authService.login(userId, password);
-            if(localStorage.getItem('token')) {
-                if(localStorage.getItem('roles') === ("ROLE_ADMIN")) navigate('/admin/dashboard')
-                else navigate('/user/dashboard')
+            let response = await login(userId, password);
+            console.log(response);
+            if (response && response.id) {
+                await setToken(response.token)
+                await setRole(response.roles);
+                response.roles.includes("ROLE_ADMIN") ? navigate('/admin/dashboard') : navigate('/user/dashboard')
             } else {
-                navigate('#');
+                setError(response.response.data.message);
             }
-        } catch(e) {
+
+        } catch (e) {
             console.log(e);
         }
 

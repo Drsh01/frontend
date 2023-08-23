@@ -43,7 +43,7 @@ const AddLoanCard = () => {
 
     
 
-    return localStorage.getItem('token') ? (
+    return (
         <div className="container text-center" style={{ marginTop: "120px" }}>
             <h2>Add Loan Card</h2>
             <form className="border col-xs-12 col-sm-10 col-8 mx-auto">
@@ -71,7 +71,7 @@ const AddLoanCard = () => {
                                     style={{ marginLeft: "10px" }}> Cancel </Link>
             </form>
         </div>
-    ) : navigate('/');
+    )
 }
 
 export default AddLoanCard;

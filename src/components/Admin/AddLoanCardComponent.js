@@ -75,7 +75,7 @@ const AddLoanCardComponent = () => {
         }
     }
 
-    return localStorage.getItem('token') ? (
+    return (
 
         <div className="page-content">
             <div className="container">
@@ -124,7 +124,7 @@ const AddLoanCardComponent = () => {
                 </div>
             </div>
         </div>
-    ) : navigate('/');
+    )
 }
 
 export default AddLoanCardComponent

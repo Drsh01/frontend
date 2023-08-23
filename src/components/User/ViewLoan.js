@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router";
-
 const EmployeeDetails = {
     "Employee_Id": "E00001",
     "Name": "Ram",
@@ -32,8 +30,7 @@ const loans = [
 ]
 
 export default function ViewLoan() {
-    const navigate = useNavigate();
-    return localStorage.getItem('token') ? (
+    return (
         <>
             <div className="container" style={{ marginTop: "150px" }}>
                 <div className="row" style={{ marginBottom: "30px", backgroundColor: "white" }}>
@@ -84,5 +81,5 @@ export default function ViewLoan() {
                 </div>
             </div>
         </>
-    ): navigate('/');
+    )
 }
