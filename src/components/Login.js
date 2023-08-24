@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = useState();
     const [error, setError] = useState();
 
-    const { token, role, setToken, setRole } = useAuth();
+    const { token, role, setToken, setRole, setId } = useAuth();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,6 +33,7 @@ function Login() {
             if (response && response.id) {
                 await setToken(response.token)
                 await setRole(response.roles);
+                await setId(response.id);
                 response.roles.includes("ROLE_ADMIN") ? navigate('/admin/dashboard') : navigate('/user/dashboard')
             } else {
                 setError(response.response.data.message);

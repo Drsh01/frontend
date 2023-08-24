@@ -6,16 +6,19 @@ const AuthContext = createContext();
 const AuthProvider = ({children}) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [role, setRole] = useState(localStorage.getItem('role'));
+    const [id, setId] = useState(localStorage.getItem('id'));
 
     useEffect(() => {
         if(token) {
             axios.defaults.headers.common["Authorization"] = "Bearer " + token;
             localStorage.setItem('token', token);
             localStorage.setItem('role', role);
+            localStorage.setItem('id', id);
         } else {
             delete axios.defaults.headers.common["Authorization"];
             localStorage.removeItem('token');
             localStorage.removeItem('role');
+            localStorage.removeItem('id');
         }
     }, [token]);
 
@@ -24,9 +27,11 @@ const AuthProvider = ({children}) => {
             token,
             setToken,
             role,
-            setRole
+            setRole,
+            id,
+            setId
         }),
-        [token, role]
+        [token, role, id]
     );
 
     return (

@@ -2,11 +2,12 @@ import '../Styles/Navbar.css'
 import { useAuth } from './AuthProvider';
 
 export default function Navbar() {
-    const { token, setToken, setRole } = useAuth();
+    const { token, setToken, setRole, setId } = useAuth();
 
     const handleClick = () => {
         setToken();
         setRole();
+        setId();
     }
 
     return (
