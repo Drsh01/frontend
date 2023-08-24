@@ -1,64 +1,66 @@
 import React from "react";
+import { applyForLoan, getItems } from "../../services/UserServices";
+import "./ApplyLoan.css";
+import { useAuth } from "../AuthProvider";
 
-const itemCategories = [
-    "Furniture",
-    "Stationary",
-    "Crockery"
-];
-
-const itemMake = [
-    "Wooden",
-    "Glass",
-    "Plastic"
-];
+const images = {
+    "Furniture": "single-product product-1 relative",
+    "Crockery": "single-product product-2",
+    "Stationery": "single-product product-3"
+}
 
 export default function ApplyLoan() {
 
-    const [itemDescription, setItemDescription] = React.useState('');
-    const [itemMakeValue, setItemMakeValue] = React.useState(itemMake[0]);
-    const [itemCategory, setItemCategory] = React.useState(itemCategories[0]);
-    const [itemValue, setItemValue] = React.useState('');
+    const [items, setItems] = React.useState(null);
+    const { id } = useAuth();
 
-    const handleSubmit = () => {
-        console.log(itemDescription, itemMakeValue, itemCategory, itemValue);
+    React.useEffect(() => {
+        async function getAllItems() {
+            let response = await getItems();
+            setItems(response);
+        }
+        getAllItems();
+    }, [])
+
+    const onClickHandler = async (index) => {
+        const item = items[index];
+        try {
+            await applyForLoan(id, item);
+            let response = await getItems();
+            setItems(response);
+        } catch(err) {
+            console.log(err);
+        }
+        
     }
 
-    return (
-        <div className="container text-center" style={{ marginTop: "150px", backgroundColor: "#0000ff" }}>
-            <h2>Select Product and Apply for Loan</h2>
-            <form className="border col-xs-12 col-sm-10 col-8 mx-auto">
-                <div className="row" style={{backgroundColor: "black" }}>
-                    <div className="form-outline form-inline my-4 col-6">
-                        <label className="form-label col-6">Employee Id</label>
-                        <input className="form-control col-6" type="number" disabled value={1} />
-                    </div>
-                    <div className="form-outline form-inline my-4 col-6">
-                        <label className="form-label col-6">Item Category</label>
-                        <select className="select col-xs-8 col-sm-6 col-4" onChange={(e) => setItemCategory(e.target.value)} >
-                            {itemCategories.map((category, index) => <option key={index} value={category}>{category}</option>)}
-                        </select>
-                    </div>
-                </div>
-                <div className="row" style={{backgroundColor: "black" }}>
-                    <div className="form-outline form-inline mb-4 col-6">
-                        <label className="form-label col-6">Item Description</label>
-                        <input className="form-control col-6" type="text" onChange={(e) => setItemDescription(e.target.value)} />
-                    </div>
-                    <div className="form-outline form-inline mb-4 col-6">
-                        <label className="form-label col-6">Item Value</label>
-                        <input className="form-control col-6" type="text" onChange={(e) => setItemValue(e.target.value)} />
-                    </div>
-                </div>
-                <div className="row" style={{backgroundColor: "black" }}>
-                <div className="form-outline form-inline mb-4 col-6">
-                    <label className="form-label col-6">Item Make</label>
-                    <select className="select col-xs-8 col-sm-6 col-4" onChange={(e) => setItemMakeValue(e.target.value)} >
-                        {itemMake.map((make, index) => <option key={index} value={make}>{make}</option>)}
-                    </select>
-                </div>
-                </div>
-                <button type="button" className="btn btn-success btn-block col-3 mb-4" onClick={handleSubmit}>Apply Loan</button>
-            </form>
-        </div>
-    )
+    return items ? (
+        <section className="section-products">
+            <div className="row" style={{ marginTop: "100px" }}>
+                {items.map((item, index) => {
+                    return (
+
+                        <div className="col-md-6 col-lg-4" style={{ paddingBottom: "0px", paddingTop: "30px" }}>
+                            <div className={images[item.itemCategory] ?? "product-4"}>
+                                {item.issueStatus === 'T' ? <div style={{ position: "relative", padding: "0px 10px" }}>
+                                    <p className="sold-out">Sold Out</p>
+                                </div> : null}
+                                <div className="part-1">
+                                    {item.issueStatus === 'N' ? <ul>
+                                        <li><button style={{ borderRadius: "1.6rem", padding: "0 10px" }}  onClick={() => onClickHandler(index)}><i className="fas fa-landmark"></i>Apply For Loan</button></li>
+                                    </ul> : null}
+                                </div>
+                                <div className="part-2">
+                                    <h3 className="product-title">{item.itemDescription}</h3>
+                                    <h4 className="product-price">{'\u20B9'} {item.itemValuation}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })
+                }
+            </div>
+        </section>
+    ) : <div style={{ marginTop: "150px" }}>Nothing issued yet!!</div>
+
 }
