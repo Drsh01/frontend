@@ -1,14 +1,12 @@
-import { useNavigate } from 'react-router';
 import '../Styles/Navbar.css'
+import { useAuth } from './AuthProvider';
 
 export default function Navbar() {
-    const navigate = useNavigate();
+    const { token, setToken, setRole } = useAuth();
 
     const handleClick = () => {
-        navigate('#');
-        if(localStorage.getItem('token')) {
-            localStorage.clear();
-        }
+        setToken();
+        setRole();
     }
 
     return (
@@ -25,7 +23,7 @@ export default function Navbar() {
                     />
                 </a>
                 <h2 className="page-heading">LOAN MANAGEMENT APPLICATION</h2>
-                <button class="btn my-2 my-sm-0" onClick={handleClick} type="submit">{localStorage.getItem('token') ? 'Sign Out' : 'Sign In'}</button>
+                <button class="btn my-2 my-sm-0" onClick={handleClick} type="submit">{token ? 'Sign Out' : 'Sign In'}</button>
                 {/* <button style={{ opacity: 0 }}>qa4g</button> */}
             </div>
         </nav>

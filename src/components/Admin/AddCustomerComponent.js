@@ -83,7 +83,7 @@ const AddCustomerComponent = () => {
     }
 
     
-    return localStorage.getItem('token') ? (
+    return(
 
         <div className="page-content">
             <div className="container">
@@ -175,7 +175,7 @@ const AddCustomerComponent = () => {
                 </div>
             </div>
         </div>
-    ) : navigate('/');
+    )
 }
 
 export default AddCustomerComponent
