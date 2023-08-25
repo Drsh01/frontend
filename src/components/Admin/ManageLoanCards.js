@@ -64,7 +64,7 @@ export default function ManageLoanCards() {
                 <br></br>
 
             </div>
-            <div className="container">
+            {/* <div className="container">
                 <div className="row" style={{ backgroundColor: "white" }}>
                     <div className="col-sm-4">
                         <Link to="/admin/loan-card/add" className="btn" >
@@ -73,7 +73,10 @@ export default function ManageLoanCards() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <Link to="/admin/loan-card/add" className="linkingComponent" >
+                <button className="custom-button">Add New</button>
+            </Link>
         </>
     )
 }

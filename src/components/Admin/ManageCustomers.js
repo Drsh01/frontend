@@ -69,7 +69,7 @@ export default function ManageCustomers() {
                 <br></br>
 
             </div>
-            <div className="container">
+            {/* <div className="container">
                 <div className="row" style={{ backgroundColor: "white" }}>
                     <div className="col-sm-4">
                         <Link to="/admin/add-customer" className="btn" >
@@ -78,7 +78,11 @@ export default function ManageCustomers() {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <Link to="/admin/add-customer" className="linkingComponent" >
+                <button className="custom-button">Add New</button>
+            </Link>
+
         </>
     )
 }

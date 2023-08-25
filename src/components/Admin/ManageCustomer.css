@@ -38,3 +38,22 @@
     margin-left: 10px;
 
 }
+
+.custom-button {
+    background-color: #004691;
+    color: #fff; /* Dark white color */
+    border: none;
+    border-radius: 20px; /* Rounded borders */
+    padding: 10px 20px; /* Adjust padding as needed */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 6%;
+    width: 200px;
+    transition: background-color 0.1s, color 0.3s; /* Smooth transition for hover effect */
+  
+    /* Hover effect */
+    &:hover {
+      background-color: black;
+    }
+  }
