@@ -20,3 +20,13 @@ export async function applyForLoan(id, item) {
         return err;
     }
 }
+
+export async function getItemsById(id) {
+    try {
+        console.log(API_URL + '/employees/' + id + '/items')
+        const res = await axios.get(API_URL + '/employees/' + id + '/items');
+        return res.data;
+    } catch(err) {
+        return err;
+    }
+}

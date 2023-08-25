@@ -28,15 +28,17 @@ export default function ApplyLoan() {
             await applyForLoan(id, item);
             let response = await getItems();
             setItems(response);
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         }
-        
+
     }
 
     return items ? (
         <section className="section-products">
             <div className="row" style={{ marginTop: "100px" }}>
+                <h2 className="heading" style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)', margin: "0% 3%", marginBottom: "1%" }}>Apply For Loan</h2>
+                <hr />
                 {items.map((item, index) => {
                     return (
 
@@ -47,12 +49,18 @@ export default function ApplyLoan() {
                                 </div> : null}
                                 <div className="part-1">
                                     {item.issueStatus === 'N' ? <ul>
-                                        <li><button style={{ borderRadius: "1.6rem", padding: "0 10px" }}  onClick={() => onClickHandler(index)}><i className="fas fa-landmark"></i>Apply For Loan</button></li>
+                                        <li><button style={{ borderRadius: "1.6rem", padding: "0 10px" }} onClick={() => onClickHandler(index)}><i className="fas fa-landmark"></i>Apply For Loan</button></li>
                                     </ul> : null}
                                 </div>
                                 <div className="part-2">
-                                    <h3 className="product-title">{item.itemDescription}</h3>
-                                    <h4 className="product-price">{'\u20B9'} {item.itemValuation}</h4>
+                                    <div style={{ display: "flex", justifyContent: "space-between", padding: "0 5%" }}>
+                                        <h5 className="product-title"><b>{item.itemDescription}</b></h5>
+                                        <h5 className="product-category">{item.itemCategory}</h5>
+                                    </div>
+                                    <div style={{ display: "flex", justifyContent: "space-between", padding: "0 5%" }}>
+                                        <h5 className="product-price"><b>{'\u20B9'} {item.itemValuation}</b></h5>
+                                        <h5 className="product-make">{item.itemMake}</h5>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +69,6 @@ export default function ApplyLoan() {
                 }
             </div>
         </section>
-    ) : <div style={{ marginTop: "150px" }}>Nothing issued yet!!</div>
+    ) : <div style={{ marginTop: "150px" }}>No items available!!</div>
 
 }

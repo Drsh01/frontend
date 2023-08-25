@@ -138,20 +138,6 @@ a:hover {
     color: #fe302f;
 }
 
-.section-products .single-product .part-2 {
-    padding-left: 5%;
-}
-
-.section-products .single-product .part-2 .product-title {
-    font-size: 1rem;
-}
-
-.section-products .single-product .part-2 h4 {
-    display: inline-block;
-    font-size: 1rem;
-}
- 
-
 .sold-out {
     position: absolute;
     background-color: black;
