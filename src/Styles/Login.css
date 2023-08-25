@@ -7,9 +7,10 @@
      background-color: #004691; 
 } */
 
-.card {
+.stylecard {
     /* background-color: #004691; */
     border-radius: 50%;
+    margin: 10% auto;
 }
 
 .page-content {

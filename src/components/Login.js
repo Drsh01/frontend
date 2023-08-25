@@ -48,13 +48,13 @@ function Login() {
     return (
 
         <div className="page-content">
-            <div className="card mb-3 carousel-inner rounded-5" style={{ width: "70%", height: "60%", margin: "10% auto" }}>
-                <div className="row g-0 d-flex justify-between" style={{ backgroundColor: "#004691" }}>
+            <div className="stylecard mb-3 carousel-inner rounded-5" style={{ width: "70%", height: "60%", maring: "10% auto"}}>
+                <div className="stylerow g-0 d-flex justify-between rounded-5" style={{ backgroundColor: "#004691" }}>
                     <div className="col-md-6">
                         <img
-                            src="https://automationedge.com/wp-content/uploads/2023/01/RPA-Use-Cases-in-Banking.jpg"
+                            src="https://qodestechnologies.com/wp-content/uploads/2020/07/loan-management-system-e1594117023268.png"
                             alt="Trendy Pants and Shoes"
-                            className="img-fluid rounded-start"
+                            className="img-fluid rounded-3"
                             style={{ height: "100%" }}
                         />
                     </div>
