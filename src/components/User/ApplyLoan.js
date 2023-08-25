@@ -43,7 +43,7 @@ export default function ApplyLoan() {
                     return (
 
                         <div className="col-md-6 col-lg-4" style={{ paddingBottom: "0px", paddingTop: "30px" }}>
-                            <div className={images[item.itemCategory] ?? "product-4"}>
+                            <div className={images[item.itemCategory] ?? "single-product product-4"}>
                                 {item.issueStatus === 'T' ? <div style={{ position: "relative", padding: "0px 10px" }}>
                                     <p className="sold-out">Sold Out</p>
                                 </div> : null}

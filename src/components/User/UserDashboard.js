@@ -50,7 +50,7 @@ const UserDashboard = () => {
               <div className="card-body">
                 <h5 className="card-title">View Items Purchased</h5>
                 <p className="card-text">
-                  View your previously purchased items.
+                  View your purchased items.
                 </p>
                 <Link to="/user/view-items"><button className="btn btn-custom">Details</button></Link>
               </div>
@@ -59,37 +59,6 @@ const UserDashboard = () => {
         </div>
       </div>
     </div>
-
-{/* 
-    <div className="row">
-      <div className="col-6 text-center d-flex align-center justify-center">
-          <img src="/user-dash-logo.png" alt="User logo" title="User Dashboard shows all the actions available to the user" />
-      </div>
-      <div className="row d-flex flex-column justify-center col-6 border-left" style={{ marginTop: "90px"}}>
-        <div className="card col-8 text-center" style={{ marginLeft: "2rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">View Loans</h3>
-            <p className="card-text">This feature helps users to view his previous loans.</p>
-            <a href="/user/view-loans" className="btn btn-success mb-4 col-6">Details</a>
-          </div>
-        </div>
-        <div className="card col-8 text-center" style={{ marginLeft: "2rem", marginTop: "1.5rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Apply for Loan</h3>
-            <p className="card-text">This feature helps users to apply for loan.</p>
-            <a href='/user/apply' className="btn btn-success mb-4 col-6">Details</a>
-          </div>
-        </div>
-        <div className="card col-8 text-center" style={{ marginLeft: "2rem", marginTop: "1.5rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">View Items Purchased</h3>
-            <p className="card-text">This feature helps users to view previously purchased items.</p>
-             <a href="/user/view-items" className="btn btn-success mb-4 col-6">Details</a>
-          </div>
-        </div>
-
-      </div>
-    </div> */}
     </>
   )
 }
