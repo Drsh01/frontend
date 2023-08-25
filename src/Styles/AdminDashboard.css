@@ -10,9 +10,11 @@
 .row{
     background-color: #ffc107;
     max-width: 100%;
+    margin-top: 120px;
+    padding-top: 120px;
 }
 .card {
-    background-color: #004691;
+    background-color: #004691 !important;
     color: white;
     margin-top: 35%;
     border-radius: 0% !important;

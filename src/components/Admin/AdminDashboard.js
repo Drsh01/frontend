@@ -5,7 +5,7 @@ const AdminDashboard = () => {
   return (
     <div className="page-content">
       <div className="container mt-4">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{marginTop:"120px"}}>
           <div className="col-md-4 mb-6">
             <div className="card card-highlight text-center d-flex flex-column justify-content-center align-items-center">
               <img
