@@ -34,7 +34,6 @@ const AddLoanCardComponent = () => {
             })
         } else {
             LoanCardService.createLoanCard(loanCard).then((response) => {
-                console.log(response.data)
                 navigate('/admin/loan-card');
             }).catch(error => {
                 console.log(error)

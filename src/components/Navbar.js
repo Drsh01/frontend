@@ -24,7 +24,7 @@ export default function Navbar() {
                     />
                 </a>
                 <h2 className="page-heading">LOAN MANAGEMENT APPLICATION</h2>
-                <button class="btn my-2 my-sm-0" onClick={handleClick} type="submit">{token ? 'Sign Out' : 'Sign In'}</button>
+                <button className="btn my-2 my-sm-0" onClick={handleClick} type="submit">{token ? 'Sign Out' : 'Sign In'}</button>
                 {/* <button style={{ opacity: 0 }}>qa4g</button> */}
             </div>
         </nav>

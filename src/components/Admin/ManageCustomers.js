@@ -15,7 +15,6 @@ export default function ManageCustomers() {
     const getAllEmployees = () => {
         CustomerService.getAllEmployees().then((response) => {
             setEmployees(response.data)
-            console.log(response.data);
         }).catch(error => {
             console.log(error);
         })
@@ -39,7 +38,7 @@ export default function ManageCustomers() {
                     <hr />
                     <table className="table table-striped table-bordered border-primary">
                         <thead className="table-primary">
-                            <tr className="text-center">
+                            <tr key="heading" className="text-center">
                                 <th scope="col">Employee Id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Designation</th>
@@ -51,11 +50,11 @@ export default function ManageCustomers() {
                             </tr>
                         </thead>
                         <tbody>
-                            {employees.map(employee => <tr className="text-center">
+                            {employees.map((employee, index) => <tr key={index} className="text-center">
                                 {
-                                    Object.keys(employee).map((key) => <td>{employee[key]}</td>)
+                                    Object.keys(employee).map((key) => <td key={key+index}>{employee[key]}</td>)
                                 }
-                                <td>
+                                <td key={'actions' + index}>
                                     <Link className="inlineLink" to={`/admin/edit-customer/${employee.employeeId}`} ><i className="material-icons">&#xE254;</i></Link>
                                     <button className="inlineButton" onClick={() => deleteEmployee(employee.employeeId)}
                                     ><i className="material-icons">&#xE872;</i> </button>

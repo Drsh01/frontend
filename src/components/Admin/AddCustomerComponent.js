@@ -38,7 +38,6 @@ const AddCustomerComponent = () => {
             })
         } else {
             CustomerService.createEmployee(employee).then((response) => {
-                console.log(response.data)
                 navigate('/admin/customers');
             }).catch(error => {
                 console.log(error)
@@ -99,7 +98,6 @@ const AddCustomerComponent = () => {
                                 className="form-control"
                                 value={employeeName}
                                 onChange={(e) => {
-                                    console.log(e.target.value);
                                     setEmployeeName(e.target.value)}}
                             />
                         </div>

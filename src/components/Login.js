@@ -29,7 +29,6 @@ function Login() {
         setError(undefined);
         try {
             let response = await login(userId, password);
-            console.log(response);
             if (response && response.id) {
                 await setToken(response.token)
                 await setRole(response.roles);

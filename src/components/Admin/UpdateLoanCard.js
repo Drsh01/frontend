@@ -25,7 +25,6 @@ export default function UpdateLoanCard() {
 
 
     const handleSubmit = (e)=>{
-        console.log(e);
         updateLoan(e);
     }
 
@@ -33,12 +32,8 @@ export default function UpdateLoanCard() {
         e.preventDefault();
         
         const loan = { loanType,durationInMonths}
-        console.log(id)
-        // console.log(loan)
-        
     
    LoanCardService.updateLoans(id,loan).then((response) => {
-                console.log(response.data)
                 navigate('/admin/loan-card');
             }).catch(error => {
                 console.log(error)
@@ -48,7 +43,6 @@ export default function UpdateLoanCard() {
     
 
     useEffect(() => {
-        console.log(id)
 
         LoanCardService.getLoans(id).then((response) => {
           

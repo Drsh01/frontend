@@ -17,8 +17,6 @@ class CustomerService{
     }
 
     updateEmployee(employee_id, employee){
-        console.log("here")
-        console.log(employee)
         return axios.put(EMPLOYEE_BASE_REST_API_URL + '/' +employee_id, employee);
     }
 

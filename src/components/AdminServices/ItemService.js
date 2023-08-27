@@ -5,7 +5,6 @@ const EMPLOYEE_BASE_REST_API_URL = 'http://localhost:8000/items';
 class ItemService{
 
     getAllItems(){
-        console.log("get hereeeeee")
         return axios.get(EMPLOYEE_BASE_REST_API_URL)
     }
 
@@ -18,8 +17,6 @@ class ItemService{
     }
 
     updateItem(itemId, item){
-        console.log("here")
-        console.log(item)
         return axios.put(EMPLOYEE_BASE_REST_API_URL + '/' +itemId, item);
     }
 

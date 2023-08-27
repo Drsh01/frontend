@@ -42,7 +42,7 @@ export default function ApplyLoan() {
                 {items.map((item, index) => {
                     return (
 
-                        <div className="col-md-6 col-lg-4" style={{ paddingBottom: "0px", paddingTop: "30px" }}>
+                        <div key={index} className="col-md-6 col-lg-4" style={{ paddingBottom: "0px", paddingTop: "30px" }}>
                             <div className={images[item.itemCategory] ?? "single-product product-4"}>
                                 {item.issueStatus !== 'N' ? <div style={{ position: "relative", padding: "0px 10px" }}>
                                     <p className="sold-out">Sold Out</p>

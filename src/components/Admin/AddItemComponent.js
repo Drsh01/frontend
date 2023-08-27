@@ -41,7 +41,6 @@ const AddItemComponent = () => {
             })
         } else {
             ItemService.createItem(item).then((response) => {
-                console.log(response.data)
                 navigate('/admin/items');
             }).catch(error => {
                 console.log(error)
@@ -78,7 +77,6 @@ const AddItemComponent = () => {
     const getAllLoanCards = () => {
         LoanCardService.getAllLoanCards().then((response) => {
             setLoanCards(response.data)
-            console.log(response.data);
         }).catch(error => {
             console.log(error);
         })

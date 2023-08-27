@@ -13,7 +13,6 @@ export default function ManageItems() {
     const getAllItems = () => {
         ItemService.getAllItems().then((response) => {
             setItems(response.data)
-            console.log(response.data);
         }).catch(error => {
             console.log(error);
         })

@@ -90,7 +90,12 @@ export default function ViewLoan() {
     }, [])
 
     const getAllAvailedLoanCards = () => {
-        axios.get(EMPLOYEE_LOAN_CARD_REST_API_URL + id + "/loans").then((response) => {
+        axios.get(EMPLOYEE_LOAN_CARD_REST_API_URL + id + "/loans", 
+        {
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+        }).then((response) => {
             setLoans(response.data)
         }).catch(error => {
             console.log(error);
@@ -103,8 +108,8 @@ export default function ViewLoan() {
                 <div className="row" style={{ backgroundColor: "white" }}>
                     <h2 style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)' }}>Loan Cards Availed</h2>
                     <hr />
-                    {loans.map(loan =>
-                        <div className="col-4" >
+                    {loans.map((loan, index) =>
+                        <div key={index} className="col-4" >
                             <div className={colorScheme[loan.loanType.loanType] ?? "l-bg-orange-dark"} style={{ height: "65%" }}>
                                 <div className="card-statistic-3 p-4">
                                     <div className="card-icon card-icon-large"><i className={iconScheme[loan.loanType.loanType] ?? "fas fa-ticket-alt"}></i></div>

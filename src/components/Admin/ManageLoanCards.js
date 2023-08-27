@@ -14,7 +14,6 @@ export default function ManageLoanCards() {
     const getAllLoanCards = () => {
         LoanCardService.getAllLoanCards().then((response) => {
             setLoanCards(response.data)
-            console.log(response.data);
         }).catch(error => {
             console.log(error);
         })

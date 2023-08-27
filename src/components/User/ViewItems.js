@@ -11,7 +11,7 @@ const images = {
 
 export default function ApplyLoan() {
 
-    const [items, setItems] = React.useState(null);
+    const [items, setItems] = React.useState();
     const { id } = useAuth();
 
     React.useEffect(() => {
@@ -20,17 +20,17 @@ export default function ApplyLoan() {
             setItems(response);
         }
         getItems();
-    }, [])
+    }, [id])
 
     return items ? (
-        <section className="section-products">
+        <section className="section-products container">
             <div className="row" style={{ marginTop: "100px" }}>
                 <h2 className="heading" style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)', margin: "0% 3%", marginBottom: "1%" }}>Items Purchased</h2>
                 <hr />
-                {items.map((item) => {
+                {items.map((item, index) => {
                     return (
 
-                        <div className="col-md-6 col-lg-4" style={{ paddingBottom: "0px", paddingTop: "30px" }}>
+                        <div key={index} className="col-md-6 col-lg-4" style={{ paddingBottom: "0px", paddingTop: "30px" }}>
                             <div className={images[item.itemCategory] ?? "product-4"}>
                                 <div className="part-1">
                                 </div>

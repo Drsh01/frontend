@@ -5,7 +5,6 @@ const EMPLOYEE_BASE_REST_API_URL = 'http://localhost:8000/loantypes';
 class LoanCardService{
 
     getAllLoanCards(){
-        console.log("get hereeeeee")
         return axios.get(EMPLOYEE_BASE_REST_API_URL)
     }
 
@@ -18,8 +17,6 @@ class LoanCardService{
     }
 
     updateLoanCard(loanCardId, loanCard){
-        console.log("here")
-        console.log(loanCard)
         return axios.put(EMPLOYEE_BASE_REST_API_URL + '/' +loanCardId, loanCard);
     }
 

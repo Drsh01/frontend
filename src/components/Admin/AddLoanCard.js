@@ -23,7 +23,6 @@ const AddLoanCard = () => {
 
 
     const handleSubmit = (e)=>{
-        console.log(e);
         createLoan(e);
     }
 
@@ -34,7 +33,6 @@ const AddLoanCard = () => {
 
     
    LoanCardService.createLoan(loan).then((response) => {
-                console.log(response.data)
                 navigate('/admin/loan-card');
             }).catch(error => {
                 console.log(error)

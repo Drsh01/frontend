@@ -9,7 +9,7 @@ const AuthProvider = ({children}) => {
     const [id, setId] = useState(localStorage.getItem('id'));
 
     useEffect(() => {
-        if(token) {
+        if(localStorage.getItem('token')) {
             axios.defaults.headers.common["Authorization"] = "Bearer " + token;
             localStorage.setItem('token', token);
             localStorage.setItem('role', role);
@@ -20,7 +20,7 @@ const AuthProvider = ({children}) => {
             localStorage.removeItem('role');
             localStorage.removeItem('id');
         }
-    }, [token]);
+    }, [token, role, id]);
 
     const contextValue = useMemo(
         () => ({
