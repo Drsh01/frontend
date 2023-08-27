@@ -36,7 +36,7 @@ export default function ApplyLoan() {
 
     return items ? (
         <section className="section-products">
-            <div className="row" style={{ marginTop: "100px" }}>
+            <div className="row" style={{ marginTop: "150px" }}>
                 <h2 className="heading" style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)', margin: "0% 3%", marginBottom: "1%" }}>Apply For Loan</h2>
                 <hr />
                 {items.map((item, index) => {
