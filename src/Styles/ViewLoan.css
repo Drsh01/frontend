@@ -63,3 +63,17 @@
     background: linear-gradient(to right, #f9900e, #ffba56) !important;
     color: #fff;
 }
+
+.linkingComponent {
+    margin-top: 150px;
+    margin-left: 3%;
+    font-size: 25px;
+
+}
+
+/* .card-icon-large {
+    margin-top: 0px;
+    /* margin-left: 3%;
+    font-size: 25px; 
+
+} */

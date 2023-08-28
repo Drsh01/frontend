@@ -31,7 +31,10 @@ export default function ManageLoanCards() {
     }
     return (
         <>
-            <div className="container" style={{ marginTop: "150px" }}>
+            <Link to="/admin/dashboard" className="linkingComponent" style={{ marginTop: "150px", fontSize: "25px" }}>
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </Link>
+            <div className="container" style={{ marginTop: "20px" }}>
                 <div className="row" style={{ backgroundColor: "white" }}>
                     <h2 style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)' }}>Loan Card Details</h2>
                     <hr />

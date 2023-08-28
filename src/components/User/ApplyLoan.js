@@ -1,6 +1,7 @@
 import React from "react";
 import { applyForLoan, getItems } from "../../services/UserServices";
 import "./ApplyLoan.css";
+import { Link } from 'react-router-dom'
 import { useAuth } from "../AuthProvider";
 
 const images = {
@@ -34,9 +35,14 @@ export default function ApplyLoan() {
 
     }
 
-    return items ? (
+    return (
+        <>
+        <Link to="/user/dashboard" className="linkingComponent" style={{ marginTop: "150px", fontSize: "25px" }}>
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </Link>
+        {items ? (
         <section className="section-products">
-            <div className="row" style={{ marginTop: "150px" }}>
+            <div className="row" style={{ marginTop: "20px" }}>
                 <h2 className="heading" style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)', margin: "0% 3%", marginBottom: "1%" }}>Apply For Loan</h2>
                 <hr />
                 {items.map((item, index) => {
@@ -69,6 +75,8 @@ export default function ApplyLoan() {
                 }
             </div>
         </section>
-    ) : <div style={{ marginTop: "150px" }}>No items available!!</div>
+    ) : <div style={{ marginTop: "150px" }}>No items available!!</div>}
+    </>
+)
 
 }

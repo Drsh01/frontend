@@ -3,7 +3,7 @@ import '../../Styles/ViewLoan.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useAuth } from '../AuthProvider'
-
+import { Link } from 'react-router-dom'
 
 const EMPLOYEE_LOAN_CARD_REST_API_URL = 'http://localhost:8000/employees/';
 
@@ -104,13 +104,17 @@ export default function ViewLoan() {
 
     return (
         <>
-            <div className="container" style={{ backgroundColor: "white", marginTop: "150px"}}>
+            <Link to="/user/dashboard" className="linkingComponent" style={{ marginTop: "150px", fontSize: "25px" }}>
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </Link>
+            <div className="container" style={{ backgroundColor: "white", marginTop: "20px"}}>
+        
                 <div className="row" style={{ backgroundColor: "white" }}>
                     <h2 style={{ background: 'linear-gradient(to right, #98FB98 50%, #40E0D0 50%)' }}>Loan Cards Availed</h2>
                     <hr />
                     {loans.map((loan, index) =>
                         <div key={index} className="col-4" >
-                            <div className={colorScheme[loan.loanType.loanType] ?? "l-bg-orange-dark"} style={{ height: "65%" }}>
+                            <div className={colorScheme[loan.loanType.loanType] ?? "card l-bg-orange-dark"} style={{ height: "65%" }}>
                                 <div className="card-statistic-3 p-4">
                                     <div className="card-icon card-icon-large"><i className={iconScheme[loan.loanType.loanType] ?? "fas fa-ticket-alt"}></i></div>
                                     <div className="mb-5">

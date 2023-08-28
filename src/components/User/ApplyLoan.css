@@ -55,7 +55,7 @@ a:hover {
 }
 
 .section-products .product-1 .part-1::before {
-    background: url("https://shopcopelandfurniture.com/wp-content/uploads/2017/07/31901-38-35-T277-2.jpg") no-repeat center !important;
+    background: url("https://www.universalfurniture.com/images/pages/home/2022/U030501_RM.jpg?v=fcYu7oTsSUAyVfxWs5MbR2L0Jpeg0JzIiZ4Eaa_BqPw") no-repeat center !important;
     background-size: cover;
     border-radius: 1.6rem;
 		/* transition: all 0.3s; */
@@ -68,13 +68,13 @@ a:hover {
 }
 
 .section-products .product-3 .part-1::before {
-    background: url("https://wallpapercave.com/wp/wp6715841.jpg") no-repeat center !important;
+    background: url("https://5.imimg.com/data5/VZ/PJ/OT/SELLER-13685268/stationery.jpg") no-repeat center !important;
     background-size: cover;
     border-radius: 1.6rem;
 }
 
 .section-products .product-4 .part-1::before {
-    background: url("https://otherplanet.photo/wp-content/uploads/2020/04/product-photography-professional-cosmetics-advertising.jpg") no-repeat center !important;
+    background: url("https://www.aliontimer.com/wp-content/uploads/2021/10/basics-of-household-appliances.jpg") no-repeat center !important;
     background-size: cover;
     border-radius: 1.6rem;
 }
@@ -142,4 +142,15 @@ a:hover {
     width: 30%;
     text-align: center;
     border-radius: 10px;
+}
+
+.styled-button{
+    margin-top: 150px;
+    margin-left: 3%;
+}
+.fa-arrow-left {
+    margin-top: 150px;
+    margin-left: 3%;
+    font-size: 25px;
+
 }
